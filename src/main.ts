@@ -1,3 +1,5 @@
+import './style.css';
+
 function init() {
   const todoList = document.getElementById('todo-list') as HTMLUListElement | null;
   const todoForm = document.getElementById('todo-form') as HTMLFormElement | null;
@@ -27,7 +29,9 @@ function createTodo(todoText: string): HTMLLIElement {
 todoForm.addEventListener('submit', e => {
   e.preventDefault();
 
-  const todoText: string = todoInput.value;
+  const todoText: string = todoInput.value.trim();
+
+  if (todoText.length === 0) return;
 
   const todoListItem: HTMLLIElement = createTodo(todoText);
 
