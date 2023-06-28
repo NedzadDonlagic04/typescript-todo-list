@@ -153,7 +153,8 @@ h1 {
   cursor: pointer;
 }
 
-#todo-list li button:hover {
+#todo-list li button:hover,
+#todo-list li button:focus {
   outline: none;
   scale: 1.3;
 }
